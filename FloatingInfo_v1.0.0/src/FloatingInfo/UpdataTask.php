@@ -46,7 +46,7 @@ class UpdataTask extends Task {
 			$player->dataPacket($pk);
 
 		}
-    }
+    	}
 
 
 	public function getNewText(){
