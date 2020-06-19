@@ -61,13 +61,10 @@ class Main extends PluginBase implements Listener {
 
 		$this->FloatInfo = $pk;
 
-
-
 		$task = new UpdataTask($this, $eid);
 		$this->getScheduler()->scheduleRepeatingTask($task, $timer);
 
 	}
-
 
 	public function onJoin(PlayerJoinEvent $event){
 		$event->getPlayer()->dataPacket($this->FloatInfo);
