@@ -9,7 +9,6 @@ use pocketmine\network\mcpe\protocol\SetActorDataPacket;
 
 class UpdataTask extends Task {
 
-
 	public function __construct(PluginBase $owner, $eid) {
 
 		$this->owner = $owner;
@@ -18,14 +17,10 @@ class UpdataTask extends Task {
 
 	}
 
-
 	public function onRun(int $Tick) {
 		$this->newInfo($this->eid);
 
 	}
-
-
-	/*----------------------API----------------------*/
 
 	public function newInfo($eid) {
 
@@ -41,7 +36,7 @@ class UpdataTask extends Task {
 
 
 
-		foreach($players as $player){
+		foreach($players as $player) {
 
 			$player->dataPacket($pk);
 
@@ -49,7 +44,7 @@ class UpdataTask extends Task {
     	}
 
 
-	public function getNewText(){
+	public function getNewText() {
 
 		$maxps = $this->server->getMaxPlayers();				//サーバーの可能な最大参加人数
 		$players = $this->server->getOnlinePlayers();
@@ -72,7 +67,7 @@ class UpdataTask extends Task {
 	}
 
 
-	public function getUpTime(){
+	public function getUpTime() {
 
 		$time = microtime(true) - \pocketmine\START_TIME;
 
@@ -99,10 +94,7 @@ class UpdataTask extends Task {
 				: "") . "$minutes 分 "
 			: "") . "$seconds 秒";
 
-
-
 		return $uptime;
 	}
-
 
 }
